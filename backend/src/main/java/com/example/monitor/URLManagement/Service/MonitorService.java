@@ -42,4 +42,11 @@ public class MonitorService {
         return this.monitorRepo.save(service);
 
     }
+
+    public void deleteById(int Id) throws MonitorServiceException {
+
+            this.monitorRepo.deleteById(Id);
+
+
+    }
 }

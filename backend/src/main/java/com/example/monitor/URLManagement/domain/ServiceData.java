@@ -2,12 +2,10 @@ package com.example.monitor.URLManagement.domain;
 
 
 import com.example.monitor.URLManagement.util.StatusType;
-import javafx.util.converter.LocalDateTimeStringConverter;
 import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.time.LocalDate;
 
 @Getter
 @Setter
