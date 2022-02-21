@@ -14,10 +14,11 @@ class UrlService {
 
 
     createService(service){
-        return axios.post(URL_API_BASE_URL, {
-            name: service.name,
-            url: service.url
-        }, {headers: {Accept: 'application/json'}});
+        const json = {
+            name: ""+service.name+"",
+            url: ""+service.url+""
+        };
+        return axios.post(URL_API_BASE_URL, json);
     }
 
     updateService(service, serviceId){

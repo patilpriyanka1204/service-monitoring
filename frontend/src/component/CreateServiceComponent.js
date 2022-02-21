@@ -52,7 +52,7 @@ class CreateServiceComponent extends React.Component {
         
                     <div className = "form-group">
                         <button color="primary" type="submit">Save</button>{' '}
-                        <button color="secondary" tag={Link} to="/services">Cancel</button>
+                       
                     </div>
                    
                </form>
