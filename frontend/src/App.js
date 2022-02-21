@@ -8,7 +8,6 @@ class App extends Component {
       return (
         <div>
             <div>
-              <Link>Add</Link>
               <CreateServiceComponent />
             </div>
             <div>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL_API_BASE_URL = "http://localhost:8080/services";
+const URL_API_BASE_URL = "http://backend:8080/services/";
 
 class UrlService {
 
@@ -9,24 +9,27 @@ class UrlService {
     }
 
     getServiceById(serviceId){
-        return axios.get(URL_API_BASE_URL + '/' + serviceId);
+        return axios.get(URL_API_BASE_URL + serviceId);
     }
 
 
     createService(service){
-        return axios.post(URL_API_BASE_URL, service);
+        return axios.post(URL_API_BASE_URL, {
+            name: service.name,
+            url: service.url
+        }, {headers: {Accept: 'application/json'}});
     }
 
     updateService(service, serviceId){
-        return axios.put(URL_API_BASE_URL + '/' + serviceId, service);
+        return axios.put(URL_API_BASE_URL + serviceId, service);
     }
 
     deleteService(serviceId){
-        return axios.delete(URL_API_BASE_URL + '/' + serviceId);
+        return axios.delete(URL_API_BASE_URL + serviceId);
     }
 
-    serviceMonitor(){
-        return axios.get(URL_API_BASE_URL+'/monitors');
+    async serviceMonitor(){
+        return axios.get(URL_API_BASE_URL + 'monitors');
     }
 }
 
