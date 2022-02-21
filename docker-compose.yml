@@ -8,6 +8,9 @@ services:
     build: ./backend/
     ports:
       - "8080:8080"
+    depends_on:
+      database:
+        condition: service_healthy
   database:
     platform: linux/amd64
     image: mysql:5.7
@@ -22,8 +25,13 @@ services:
       MYSQL_PASSWORD: secret
     volumes:
       - ./data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", 'ping', '-h', 'localhost']
+      interval: 30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
 
 # Use this if you want to initialize the db using a init.sql on container startup. Replace "./server/init.sql" with the path to your init.sql.
 #    volumes:
 #      - ./server/init.sql:/docker-entrypoint-initdb.d/init.sql
-
