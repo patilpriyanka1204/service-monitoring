@@ -6,8 +6,9 @@
 
 # Steps to run
 1. Clone the repo on your machine
-2. Run the following command from the root folder of cloned repo
+2. Create a new directory 'data' at root level of repo(i.e inside service-monitoring)
+3. Run the following command from the root folder of cloned repo
     1. docker-compose up -d
-3. Check if all three container are running
+4. Check if all three container are running
     docker ps
-4. Access UI from http://localhost/8080
+5. Access UI from http://localhost/8080
