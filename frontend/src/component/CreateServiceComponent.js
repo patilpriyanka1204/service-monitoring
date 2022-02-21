@@ -34,6 +34,10 @@ class CreateServiceComponent extends React.Component {
         this.setState({url:e.target.value})
 
     }
+    
+    refreshPage(e){
+        window.location.reload();
+    } 
 
     render (){
         return (
@@ -51,7 +55,7 @@ class CreateServiceComponent extends React.Component {
                     </div>
         
                     <div className = "form-group">
-                        <button color="primary" type="submit">Save</button>{' '}
+                        <button color="primary" type="submit" onClick={e => this.refreshPage()}>Save</button>{' '}
                        
                     </div>
                    
